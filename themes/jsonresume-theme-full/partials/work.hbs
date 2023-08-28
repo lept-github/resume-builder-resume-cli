@@ -1,0 +1,41 @@
+{{#if resume.work.length}}
+<section id="experience" class="experience">
+  {{#each resume.work}}
+  <section class="item">
+    {{#if @first}}
+    <h2>Experience</h2>
+    {{/if}}
+    <header>
+      {{#if position}}
+      <h3 class="name">{{position}}</h3>
+      {{/if}}
+      <div class="subhead">
+      {{#if company}}
+      <span class="company">{{company}}</span>
+      {{/if}}
+      <small class="dates">
+      {{#if startDate}}
+          <span class="startDate">{{startDate}}</span>
+      {{/if}}
+      {{#if endDate}}
+          <span class="endDate">- {{endDate}}</span>
+      {{else}}
+       <span class="endDate">- Present</span>
+      {{/if}}
+      </small>
+      </div>
+    </header>
+    {{#if summary}}
+    <div class="summary">{{paragraphSplit company_bio}}</div>
+    {{/if}}
+    {{#if highlights.length}}
+    <ul class="highlights">
+      {{#each highlights}}
+      <li>{{.}}</li>
+      {{/each}}
+    </ul>
+    {{/if}}
+  </section>
+  {{/each}}
+</section>
+{{/if}}

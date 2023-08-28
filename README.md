@@ -1,0 +1,1 @@
+https://jsonresume.org/getting-started/

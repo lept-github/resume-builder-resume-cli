@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "name": "resume-builder",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build:html": "resume export ../resume-dist/luis-pacheco-resume.html --theme full",
+    "build:pdf": "resume export ../resume-dist/luis-pacheco-resume.pdf --theme full",
+    "build": "curl -o resume.json https://raw.githubusercontent.com/lept-github/resume-src/master/luis-pacehco-resume.json && yarn build:html && yarn build:pdf"
+  },
+  "dependencies": {
+    "jsonresume-theme-full": "^0.0.4",
+    "resume-cli": "^3.0.8"
+  }
+}
