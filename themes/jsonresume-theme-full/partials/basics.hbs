@@ -1,83 +1,82 @@
 {{#resume.basics}}
-<section id="heading" class="heading">
-  <header>
-    <h1>{{name}}</h1>
-    {{#if label}}
-    <h2>{{label}}</h2>
-    {{/if}}
-    {{#if summary}}
-    <div class="summary">{{paragraphSplit summary}}</div>
-    {{/if}}
-  </header>
-
-  {{#if profiles.length}}
-  <div class="profiles">
-    {{#if email}}
-    <div class="profile">
-        <strong class="network">
-            <i class="fa-solid fa-envelope"></i>
-        </strong>
-        <span class="username">
-            <a href="mailto:{{email}}">{{email}}</a>
-        </span>
-    </div>
-    {{#if phone}}
-        <div class="profile">
-            <strong class="network">
-                <i class="fa-solid fa-phone"></i>
-            </strong>
-            <span class="username">
-            <a href="tel:{{phone}}">{{phone}}</a>
-        </span>
-        </div>
-    {{/if}}
-    {{#if url}}
-        <div class="profile">
-            <strong class="network">
-                <i class="fa-brands fa-chrome"></i>
-            </strong>
-            <span class="username">
-            <a href="http://{{url}}">{{url}}</a>
-        </span>
-        </div>
-    {{/if}}
-    {{/if}}
-    {{#each profiles}}
-    <div class="profile">
-      {{#if network}}
-        <strong class="network">
-            {{#if (eq network "linkedin")}}
-                <i class="fa-brands fa-linkedin"></i>
-            {{else}}
-                {{#if (eq network "github")}}
-                    <i class="fa-brands fa-github"></i>
-                {{else}}
-                    {{network}}
-                {{/if}}
+    <section id="heading" class="heading">
+        <header>
+            <h1>{{name}}</h1>
+            {{#if label}}
+                <h2>{{label}}</h2>
             {{/if}}
-        </strong>
-          {{#if username}}
-              <span class="username">
-                  {{#if url}}
-                      <a href="{{url}}" target="external">{{username}}</a>
-                  {{else}}
-                      {{username}}
-                  {{/if}}
-              </span>
-          {{/if}}
-      {{/if}}
-    </div>
-    <div class="profile print">
-      {{#if username}}
-      <span class="username">
-        {{#if url}}
-        {{url}}
-        {{/if}}
-      </span>
-      {{/if}}
-    </div>
-    {{/each}}
-  </div>
-  {{/if}}
-</section>
+            {{#if profiles.length}}
+                <div class="profiles">
+                    {{#if email}}
+                        <div class="profile">
+                            <strong class="network">
+                                <i class="fa-solid fa-envelope"></i>
+                            </strong>
+                            <span class="username">
+                                <a href="mailto:{{email}}">{{email}}</a>
+                            </span>
+                        </div>
+                        {{#if phone}}
+                            <div class="profile">
+                                <strong class="network">
+                                    <i class="fa-solid fa-phone"></i>
+                                </strong>
+                                <span class="username">
+                                    <a href="tel:{{phone}}">{{phone}}</a>
+                                </span>
+                            </div>
+                        {{/if}}
+                        {{#if url}}
+                            <div class="profile">
+                                <strong class="network">
+                                    <i class="fa-brands fa-chrome"></i>
+                                </strong>
+                                <span class="username">
+                                    <a href="http://{{url}}">{{url}}</a>
+                                </span>
+                            </div>
+                        {{/if}}
+                    {{/if}}
+                    {{#each profiles}}
+                        <div class="profile">
+                            {{#if network}}
+                                <strong class="network">
+                                    {{#if (eq network "linkedin")}}
+                                        <i class="fa-brands fa-linkedin"></i>
+                                    {{else}}
+                                        {{#if (eq network "github")}}
+                                            <i class="fa-brands fa-github"></i>
+                                        {{else}}
+                                            {{network}}
+                                        {{/if}}
+                                    {{/if}}
+                                </strong>
+                                {{#if username}}
+                                    <span class="username">
+                                        {{#if url}}
+                                            <a href="{{url}}" target="external">{{username}}</a>
+                                        {{else}}
+                                            {{username}}
+                                        {{/if}}
+                                    </span>
+                                {{/if}}
+                            {{/if}}
+                        </div>
+                        <div class="profile print">
+                            {{#if username}}
+                                <span class="username">
+                                    {{#if url}}
+                                        {{url}}
+                                    {{/if}}
+                                </span>
+                            {{/if}}
+                        </div>
+                    {{/each}}
+                </div>
+            {{/if}}
+            {{#if summary}}
+                <div class="summary">{{paragraphSplit summary2}}</div>
+            {{/if}}
+        </header>
+    </section>
 {{/resume.basics}}
